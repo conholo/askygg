@@ -1,0 +1,36 @@
+Barrel Distortion:
+  Distortion Strength:
+    - 0
+    - 0
+Bloom:
+  Bloom Intensity: 9.56000042
+  Bloom Threshold: 2.6500001
+  Bloom Knee: 1.63
+  Bloom Dirt Intensity: 0.100000001
+Chromatic Aberration:
+  Aberration Strength: 0
+Contrast & Brightness:
+  Contrast Strength: 0
+  Brightness: -1.63999999
+Radial Blur:
+  Blur Strength: 0
+  Blur Samples: 10
+  Blur Direction:
+    - 0.5
+    - 0.5
+Sobel:
+  Sobel Strength: 0.300000012
+Vignette:
+  Radius: 1
+  Softness: 0.550000012
+Output:
+  Exposure: 1
+  Apply Color Correction: true
+Film Grain:
+  Grain Strength: 0
+Sharpen:
+  Sharpen Strength: 19.2199993
+Hue Shift:
+  Hue Shift Amount: 0
+  Saturation Boost Amount: -0.0500000007
+  Value Boost Amount: 0

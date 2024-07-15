@@ -1,0 +1,58 @@
+Output:
+  Exposure: 1
+  Tonemapper: 0
+  WhitePoint: 5
+  Sensor Noise Alpha: 1
+  Sensor Noise Beta: 0
+  Sensor Noise Gamma: 0
+  Sensor Offset Perlin Frequency: -0.310000002
+  Sensor Offset Perlin Amplitude: 0.639999986
+  Bloom Intensity: 2
+  Bloom Dirt Intensity: 0
+  Bloom Upsample Radius: 1
+  Bloom Upsample Tighten Factor: 3
+Vignette:
+  Radius: 1
+  Softness: 0.5
+Sobel:
+  Sobel Strength: 0
+  Sobel Threshold: 0
+Sharpen:
+  Sharpen Strength: 0.300000012
+Hue Shift:
+  Hue Shift Amount: -0.0199999996
+  Saturation Boost Amount: 0.400000006
+  Value Boost Amount: 0.00999999978
+Radial Blur:
+  Blur Strength: 0.340000004
+  Blur Samples: 20
+  Blur Direction:
+    - 0.100000001
+    - 0.100000001
+MultiPassBloom:
+  Threshold: 0.100000001
+  Knee: 0.0299999993
+  Radius: 0.0399999991
+  Upsample Tighten Factor: 55
+Barrel Distortion:
+  Distortion Strength:
+    - 0
+    - 0
+RadialBloom:
+  Amplitude: 0.200000003
+  Pixel Radius: 12
+  Luminance Threshold: 0.119999997
+  Sigma Scale Factor: 3.26999998
+  Blur Color Weight: 1.10000002
+Chromatic Aberration:
+  Aberration Strength: 9.99999975e-05
+Contrast & Brightness:
+  Contrast Strength: 1.82099998
+  Brightness: 0.109999999
+PassOrder:
+  - Sobel
+  - RadialBlur
+  - HueShift
+  - Sharpen
+  - BarrelDistortion
+Bloom Pass Type: 2
