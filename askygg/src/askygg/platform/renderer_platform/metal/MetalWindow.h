@@ -6,6 +6,7 @@
 #include "Metal/Metal.hpp"
 #include "AppKit/AppKit.hpp"
 
+
 namespace askygg
 {
     class MetalWindow : public Window

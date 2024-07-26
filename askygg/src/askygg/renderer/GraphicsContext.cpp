@@ -3,6 +3,7 @@
 
 #include "askygg/renderer/PlatformRenderAPI.h"
 #include "askygg/platform/renderer_platform/opengl/OpenGLGraphicsContext.h"
+#include "askygg/platform/renderer_platform/vulkan/VulkanGraphicsContext.h"
 
 namespace askygg
 {
@@ -14,8 +15,7 @@ namespace askygg
 				YGG_ASSERT(false, "RendererAPI::None is currently not supported!");
 				return nullptr;
 			case PlatformRenderAPI::API::Vulkan:
-				YGG_ASSERT(false, "RendererAPI::Vulkan is currently not supported!");
-				return nullptr;
+				return CreateRef<VulkanGraphicsContext>(static_cast<GLFWwindow*>(window));
 			case PlatformRenderAPI::API::Metal:
 				YGG_ASSERT(false, "RendererAPI::Metal is currently not supported!");
 				return nullptr;

@@ -95,6 +95,8 @@ namespace askygg
 		virtual void Bind() const = 0;
 		virtual void Unbind() const = 0;
 
+		virtual void UploadPushBuffer() = 0;
+
 		virtual int UploadUniformFloat(const std::string& name, float value) = 0;
 		virtual int UploadUniformFloat2(const std::string& name, const glm::vec2& value) = 0;
 		virtual int UploadUniformFloat3(const std::string& name, const glm::vec3& value) = 0;
@@ -105,10 +107,8 @@ namespace askygg
 		virtual int	  UploadUniformIntArray(const std::string& name, uint32_t count, int* basePtr) = 0;
 		virtual int	  UploadUniformMat3(const std::string& name, const glm::mat3& matrix) = 0;
 		virtual int	  UploadUniformMat4(const std::string& name, const glm::mat4& matrix) = 0;
-		virtual int	  UploadUniformFloat2Array(const std::string& name, uint32_t count,
-			  glm::vec2* value) = 0;
-		virtual int	  UploadUniformFloat3Array(const std::string& name, uint32_t count,
-			  glm::vec3* value) = 0;
+		virtual int	  UploadUniformFloat2Array(const std::string& name, uint32_t count, glm::vec2* value) = 0;
+		virtual int	  UploadUniformFloat3Array(const std::string& name, uint32_t count, glm::vec3* value) = 0;
 		virtual void* GetUniformData(ShaderAttributeType type, GLint location) = 0;
 		virtual void  DispatchCompute(uint32_t groupX, uint32_t groupY, uint32_t groupZ) = 0;
 		virtual void  EnableShaderImageAccessBarrierBit() = 0;

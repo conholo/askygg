@@ -3,14 +3,15 @@
 #include "askygg/core/Window.h"
 #include "askygg/renderer/GraphicsContext.h"
 
-struct GLFWWindow;
+struct GLFWwindow;
+
 namespace askygg
 {
-	class GLFWXPlatformWindow : public Window
+	class GLFWWindow : public Window
 	{
 	public:
-		explicit GLFWXPlatformWindow(const WindowProperties& props);
-		~GLFWXPlatformWindow() override;
+		explicit GLFWWindow(const WindowProperties& props);
+		~GLFWWindow() override;
 		void OnUpdate() override;
 
 		void SetEventCallback(const EventCallbackFn& callback) override { m_Data.Callback = callback; }

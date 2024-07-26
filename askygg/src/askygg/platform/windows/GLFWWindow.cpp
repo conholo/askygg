@@ -1,4 +1,4 @@
-#include "askygg/platform/windows/GLFWXPlatformWindow.h"
+#include "askygg/platform/windows/GLFWWindow.h"
 
 #include "askygg/core/Window.h"
 #include "askygg/core/Log.h"
@@ -8,6 +8,7 @@
 #include "askygg/core/Assert.h"
 
 #include <glad/glad.h>
+#define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
 namespace askygg
@@ -17,17 +18,17 @@ namespace askygg
 		YGG_LOG_CRITICAL("GLFW Error: {}", description);
 	}
 
-	GLFWXPlatformWindow::GLFWXPlatformWindow(const WindowProperties& properties)
+	GLFWWindow::GLFWWindow(const WindowProperties& properties)
 	{
 		Initialize(properties);
 	}
 
-	GLFWXPlatformWindow::~GLFWXPlatformWindow()
+	GLFWWindow::~GLFWWindow()
 	{
 		Shutdown();
 	}
 
-	void GLFWXPlatformWindow::Initialize(const WindowProperties& properties)
+	void GLFWWindow::Initialize(const WindowProperties& properties)
 	{
 		YGG_ASSERT(glfwInit(), "Failed to initialize GLFW");
 
@@ -134,13 +135,13 @@ namespace askygg
 		});
 	}
 
-	void GLFWXPlatformWindow::OnUpdate()
+	void GLFWWindow::OnUpdate()
 	{
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 	}
 
-	void GLFWXPlatformWindow::ToggleIsMaximized(bool maximize) const
+	void GLFWWindow::ToggleIsMaximized(bool maximize) const
 	{
 		if (maximize)
 			glfwMaximizeWindow(m_WindowHandle);
@@ -148,24 +149,24 @@ namespace askygg
 			glfwRestoreWindow(m_WindowHandle);
 	}
 
-	void GLFWXPlatformWindow::SetVSync(bool enable)
+	void GLFWWindow::SetVSync(bool enable)
 	{
 		glfwSwapInterval(enable ? 1 : 0);
 		m_Data.VSync = enable;
 	}
 
-	void GLFWXPlatformWindow::Shutdown()
+	void GLFWWindow::Shutdown()
 	{
 		glfwDestroyWindow(m_WindowHandle);
 		glfwTerminate();
 	}
 
-	bool GLFWXPlatformWindow::IsVSync() const
+	bool GLFWWindow::IsVSync() const
 	{
 		return m_Data.VSync;
 	}
 
-	void GLFWXPlatformWindow::ToggleIsHidden(bool hidden)
+	void GLFWWindow::ToggleIsHidden(bool hidden)
 	{
 		if (hidden)
 			glfwHideWindow(m_WindowHandle);
